@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>1st web page</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <style>
         #image1 {
             width: 15%;
@@ -20,53 +22,208 @@
             height: auto;
         }
 
+        .nav-wrapper {
+            padding-left: 30px;
+        }
+
+        #input-wrapper {
+            display: inline-block;
+        }
+
+        .to-uppercase {
+            vertical-align: top;
+        }
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+        header {
+            min-height: 10vh;
+        }
+
+        main {
+            min-height: 70vh;
+            padding-bottom: 10vh;
+        }
+
+        footer {
+            min-height: 20vh;
+            background-color: #3d4245;
+            color: #fff;
+            position: relative;
+        }
+
+        .copyright {
+            background-color: #000;
+            text-align: center;
+            line-height: 40px;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+
+        .copyright p {
+            line-height: 41px;
+            margin-bottom: 0;
+        }
+
+        p.contacts {
+            font-size: 18px;
+        }
+
+        p.contacts i {
+            font-size: 22px;
+        }
+
+        .email-link {
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        p.contacts a:hover,
+        p.contacts a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        footer .container {
+            padding-top: 35px;
+        }
+
+        .collapse-action {
+            cursor: pointer;
+        }
+
+        .collapse-action:after {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            padding-left: 5px;
+            font-size: 12px;
+        }
+
+        .collapse-action[aria-expanded=false]:after {
+            content: "\f078";
+        }
+
+        .collapse-action[aria-expanded=true]:after {
+            content: "\f077";
+        }
+
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .card.card-body.row {
+            flex-direction: row;
+        }
+
+        #first-section {
+            border: 0;
+        }
+
+        body.has_background,
+        body.has_background .card {
+            background-color: #f3f3f3;
+        }
+
     </style>
 </head>
 
-<body class="container">
-    <header class="row">
-        <div id="logo" class="col-3">
-            <a href="#">
-                <img src="media/icon.png" alt="logo">
-            </a>
-        </div>
-        <div class="col-9 nav-wrapper justify-content-end d-flex align-items-center">
-            <!--NAV-->
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="btn btn-primary nav-link" onclick="maiusculas()" href="#">Maisculas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.ufp.pt/inicio/estudar-e-investigar/licenciaturas/">Link1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.youtube.com/">Link2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-primary nav-link" onclick="cores()" href="#">Cores</a>
-                </li>
-            </ul>
+<body>
+    <header class="container">
+        <div class="row">
+            <div id="logo" class="col-1">
+                <a href="#">
+                    <img src="media/icon.png" alt="logo">
+                </a>
+            </div>
+            <div class="col-11 nav-wrapper justify-content-start d-flex align-items-center">
+                <!--NAV-->
+                <ul class="nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">
+                            <i class="fab fa-bootstrap"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fontawesome.com/" target="_blank">
+                            <i class="fab fa-font-awesome-flag"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="cores()" href="#" title="Alterar background">
+                            <i class="fas fa-adjust"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div id="input-wrapper" class="form-row">
+                                    <input id="input-uppercase" type="text" placeholder="Insira aqui o seu texto" class="form-control">
+                                </div>
+                                <button class="btn btn-primary to-uppercase" onclick="maiusculas()" type="submit">Maisculas</button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </header>
-    <main>
+    <main class="container">
+        <div class="card card-body col-12" id="first-section">
+            <h1>
+                Hello World!!!
+            </h1>
+            <p>
+                Esta página web foi construída com recuso às tecnologias:
+            </p>
+            <img src="media/fundo.png" class="img-responsive">
+        </div>
         <!--COLLAPSE-->
-        <p>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Botão collapse
-            </button>
+        <p class="collapse-action" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Sobre
         </p>
 
         <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <p>Universidade Fernando Pessoa
-                    <img src="UniversidadeFernandoPessoa.jpg" id="image1">
+            <div class="card card-body row">
+                <div class="col-2">
+                    <img src="media/trex.png" class="img-responsive">
+                </div>
+                <div class="col-10">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Nome:</strong> Bruno Martins
+                        </li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!--MODAL-->
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Modal Button
+            Calculadora multiplicadora
         </button>
 
         <!-- Modal -->
@@ -89,8 +246,7 @@
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success" onclick="resultado()">Submeter</button>
+                            <button type="button" class="btn btn-success" onclick="resultado()">Calcular</button>
                         </div>
                     </form>
                 </div>
@@ -99,9 +255,33 @@
 
     </main>
     <footer>
-        <span>
-            Footer
-        </span>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <p class="contacts">
+                        <i class="far fa-envelope"></i>
+                        <a href="mailto:41744@ufp.edu.pt" class="email-link">
+                            41744@ufp.edu.pt
+                        </a>
+                    </p>
+                    <p class="contacts">
+                        <a href="https://github.com/brunorcmartins" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-6 justify-content-center d-flex">
+                    <a href="https://www.ufp.pt" target="_blank">
+                        <img src="media/logoufp.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                &copy; 2021 Bruno Martins
+            </p>
+        </div>
     </footer>
 </body>
 <script>
@@ -113,17 +293,19 @@
     }
 
     function maiusculas() {
-        alert("ALERTA!!!!");
+        var txt = document.getElementById("input-uppercase").value.toUpperCase();
+        alert(txt);
     }
 
     function cores() {
-        var cor = document.getElementsByTagName("body");
-        var cor_atual = window.getComputedStyle(cor, null).getPropertyValue('background-color');
+        var body = document.querySelector("body");
+        var cor_atual = window.getComputedStyle(body).getPropertyValue('background-color');
         if (cor_atual == "rgb(255, 255, 255)") {
-            cor.style.backgroundColor = "rgb(85, 115, 142)";
+            body.classList.add("has_background");
         } else {
-            cor.style.backgroundColor = "rgb(255, 255, 255)";
+            body.classList.remove("has_background");
         }
+
     }
 
 </script>
